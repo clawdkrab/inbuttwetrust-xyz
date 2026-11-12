@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- custom -->
+<!-- BUTTCOIN: 2013 crypto-forum [ANN] thread, MS Paint chaos. Hand-built, single file. -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[ANN] BUTTCOIN ($BUTTCOIN) | In Butt We Trust | Proof-of-Butt</title>
+<meta name="description" content="[ANN] $BUTTCOIN: In Butt We Trust. Proof-of-Butt. The crypto-skeptic joke finally became a coin. A 2013-forum meme coin on Solana.">
+<meta name="theme-color" content="#006699">
+<meta property="og:title" content="[ANN] BUTTCOIN ($BUTTCOIN)">
+<meta property="og:description" content="In Butt We Trust. Proof-of-Butt. Fair launch (we think). $BUTTCOIN on Solana.">
+<meta property="og:image" content="banner.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Rye&family=Silkscreen&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#006699;--blue2:#d1d7dc;--row1:#efefef;--row2:#dee3e7;--head:#98aab1;--txt:#000;--link:#006699;--gold:#f7c600;--gold2:#c99a00;
+--forum:Verdana,Arial,Helvetica,sans-serif;--comic:"Comic Sans MS","Comic Neue",cursive;--px:"Silkscreen",monospace;--west:"Rye",Georgia,serif}
+*{box-sizing:border-box}
+html,body{margin:0;overflow-x:hidden}
+body{background:#e5e5e5;font-family:var(--forum);font-size:12px;color:var(--txt);line-height:1.5}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--link)}a:hover{color:#d36}
+button{font:inherit;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* ===== raining coins parallax ===== */
+#rain{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:linear-gradient(#cfe3f3,#e9e9e9)}
+.cn{position:absolute;top:0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff6a8,var(--gold) 45%,var(--gold2));border:2px solid #8a6a00;color:#8a6a00;font-family:var(--west);display:grid;place-items:center;will-change:transform;animation:flip 1.6s ease-in-out infinite}
+@keyframes flip{50%{scale:.15 1}}
+/* ===== forum shell ===== */
+#forum{position:relative;z-index:2;max-width:1020px;margin:18px auto 30px;background:#fff;border:1px solid #98aab1;box-shadow:0 0 0 6px rgba(255,255,255,.6),6px 6px 0 6px rgba(0,0,0,.15)}
+.top{display:flex;align-items:center;gap:18px;padding:14px 18px;background:linear-gradient(#fff,#e2ecf3);border-bottom:2px solid var(--blue);flex-wrap:wrap}
+.logo{font-family:var(--west);font-size:clamp(28px,5vw,44px);color:var(--blue);line-height:1;text-shadow:2px 2px 0 var(--gold)}
+.logo small{display:block;font-family:var(--forum);font-size:11px;color:#555;text-shadow:none;margin-top:4px}
+.nav{margin-left:auto;display:flex;gap:12px;flex-wrap:wrap;font-weight:700;font-size:11px}
+.nav a{text-decoration:none}.nav a::before{content:"\25B8 ";color:#999}
+.mq{background:#000;color:#ff0;font-family:var(--px);font-size:13px;overflow:hidden;white-space:nowrap;padding:4px 0}
+.mq span{display:inline-block;padding-left:100%;animation:mq 30s linear infinite}
+@keyframes mq{to{transform:translateX(-100%)}}
+.crumb{padding:8px 14px;font-weight:700;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.pages a,.pages b{display:inline-block;padding:0 4px;border:1px solid #98aab1;margin-left:2px;text-decoration:none}
+.pages b{background:var(--blue);color:#fff}
+.thread{margin:0 10px 10px;border:1px solid #98aab1}
+.th{background:linear-gradient(#5c8fb8,var(--blue));color:#fff;font-weight:700;padding:6px 10px;font-size:13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.th span:last-child{font-weight:400;font-size:11px}
+/* posts */
+.post{display:grid;grid-template-columns:180px 1fr;border-top:1px solid #98aab1}
+.post:nth-of-type(odd) .u,.post:nth-of-type(odd) .b{background:var(--row1)}
+.post:nth-of-type(even) .u,.post:nth-of-type(even) .b{background:var(--row2)}
+.u{padding:10px;border-right:1px solid #98aab1;font-size:11px}
+.u .nm{font-weight:700;font-size:13px;color:var(--blue)}
+.u .rk{color:#555}
+.stars{color:#e8a400;letter-spacing:-1px;font-size:13px}
+.av{width:96px;height:96px;margin:6px 0;border:1px solid #444;display:grid;place-items:center;font-family:var(--west);font-size:42px;overflow:hidden;background:#fff}
+.av img{width:100%;height:100%;object-fit:cover}
+.b{padding:10px 14px 14px;min-width:0}
+.ph{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #98aab1;padding-bottom:5px;margin-bottom:10px;font-size:11px;flex-wrap:wrap}
+.ph b{font-size:12px}
+.ph .q{border:1px solid #98aab1;padding:0 6px;background:#fff;text-decoration:none}
+.body{font-size:13.5px;line-height:1.65}
+.body p{margin:0 0 12px}
+.sig{border-top:1px dashed #98aab1;margin-top:14px;padding-top:6px;font-size:11px;color:#444;font-family:monospace;white-space:pre-wrap;word-break:break-word}
+/* OP */
+.ann{text-align:center}
+.ann h1{margin:6px 0;font-family:Impact,"Arial Black",sans-serif;font-size:clamp(46px,9vw,96px);line-height:.95;letter-spacing:2px;color:var(--gold);-webkit-text-stroke:2px #7a5a00;text-shadow:4px 4px 0 #000;animation:hue 3s linear infinite}
+@keyframes hue{50%{color:#ff4fb0}}
+.ann .tk{font-family:var(--px);font-size:18px;color:#c00}
+.ann .tl{font-family:var(--west);font-size:clamp(20px,3vw,30px);color:#7a5a00;margin:4px 0 12px}
+.heroimg{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center;max-width:720px;margin:12px auto}
+.coinspin{width:min(300px,70vw);margin:0 auto;perspective:800px}
+.coinspin img{border-radius:50%;border:6px solid var(--gold2);box-shadow:0 0 0 4px #000,0 0 40px rgba(247,198,0,.7);animation:spin 5s linear infinite;aspect-ratio:1;object-fit:cover}
+@keyframes spin{to{transform:rotateY(360deg)}}
+.bbl{list-style:none;padding:0;margin:0;text-align:left;font-family:var(--comic);font-size:16px}
+.bbl li::before{content:"\2714  ";color:#090;font-weight:700}
+.bbl .no::before{content:"\2718  ";color:#c00}
+.buy{display:inline-block;font-family:Impact,sans-serif;font-size:30px;letter-spacing:1px;padding:10px 34px;margin:10px 0;background:linear-gradient(#7fff3a,#18a800);color:#000;text-decoration:none;border:3px outset #6f6;box-shadow:0 0 0 3px #000}
+.buy:hover{border-style:inset}
+.blink{animation:bl 1s steps(1) infinite}@keyframes bl{50%{visibility:hidden}}
+.rainbow{background:linear-gradient(90deg,red,orange,#cc0,green,blue,purple);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+table.ugly{border-collapse:separate;border:3px ridge #888;margin:14px auto;background:#ffffe0;font-family:var(--comic);font-size:15px;min-width:min(440px,100%)}
+table.ugly td,table.ugly th{border:2px groove #aaa;padding:6px 10px;text-align:left}
+table.ugly th{background:#000;color:var(--gold);font-family:var(--px);font-weight:400}
+/* miner */
+.term{background:#000;color:#3f3;font-family:"Courier New",monospace;font-size:13px;padding:10px 12px;border:3px inset #666;height:240px;overflow:hidden;position:relative;line-height:1.45}
+.term .hd{color:#ff0}.term .acc{color:#3f3}.term .rej{color:#f55}
+.rig{display:grid;grid-template-columns:240px 1fr;gap:14px;align-items:start}
+.rigart{background:#222;border:3px outset #888;padding:10px;color:#ccc;font-family:monospace;font-size:11px}
+.fans{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0}
+.fan{aspect-ratio:1;border-radius:50%;border:3px solid #555;background:conic-gradient(#888 0 20%,#333 0 33%,#888 0 53%,#333 0 66%,#888 0 86%,#333 0);will-change:transform}
+.hr{font-family:var(--px);font-size:18px;color:#3f3;text-align:center;background:#000;padding:4px;border:2px inset #555}
+.cheek{font-family:var(--px);font-size:11px;color:#f9a;text-align:center;margin-top:6px}
+/* casino */
+.casino{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+.wheelbox{position:relative;width:min(320px,80vw);margin:0 auto;aspect-ratio:1}
+.wheel{position:absolute;inset:0;border-radius:50%;border:12px solid #5a2d0c;box-shadow:0 0 0 4px #000,inset 0 0 0 6px var(--gold);will-change:transform;
+background:conic-gradient(#0a0 0 9.73deg,#c00 0 19.46deg,#111 0 29.19deg,#c00 0 38.92deg,#111 0 48.65deg,#c00 0 58.38deg,#111 0 68.11deg,#c00 0 77.84deg,#111 0 87.57deg,#c00 0 97.3deg,#111 0 107.03deg,#c00 0 116.76deg,#111 0 126.49deg,#c00 0 136.22deg,#111 0 145.95deg,#c00 0 155.68deg,#111 0 165.41deg,#c00 0 175.14deg,#111 0 184.87deg,#c00 0 194.6deg,#111 0 204.33deg,#c00 0 214.06deg,#111 0 223.79deg,#c00 0 233.52deg,#111 0 243.25deg,#c00 0 252.98deg,#111 0 262.71deg,#c00 0 272.44deg,#111 0 282.17deg,#c00 0 291.9deg,#111 0 301.63deg,#c00 0 311.36deg,#111 0 321.09deg,#c00 0 330.82deg,#111 0 340.55deg,#c00 0 350.28deg,#111 0 360deg)}
+.wheel::after{content:"";position:absolute;inset:26%;border-radius:50%;background:radial-gradient(circle,var(--gold) 0 30%,#7a3d10 31% 100%);border:4px solid #000}
+.wheel::before{content:"BUTT";position:absolute;inset:0;display:grid;place-items:center;z-index:1;font-family:var(--west);font-size:22px;color:#000}
+.ball{position:absolute;top:2px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #000;z-index:2}
+.res{font-family:var(--west);font-size:22px;text-align:center;margin-top:10px;color:#a00}
+/* gallery attachments */
+.att{border:1px solid #98aab1;background:#fff;padding:10px}
+.att .h{font-weight:700;font-size:11px;margin-bottom:8px;color:#555}
+.atts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.at{border:1px solid #98aab1;background:var(--row1);padding:4px;font-size:10px;text-align:left;color:#000}
+.at:hover,.at:focus{background:#ffe9a8;outline:2px dashed #c00}
+.at img{width:100%;aspect-ratio:1;object-fit:cover;background:#fff;margin-bottom:3px}
+.at.tiny img{object-fit:contain;filter:grayscale(.2)}
+/* how to buy */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;padding:10px 10px 10px 56px;position:relative;margin-bottom:8px;background:#fff;border:1px dashed #98aab1;font-size:14px}
+.steps li::before{content:counter(s);position:absolute;left:10px;top:8px;width:34px;height:34px;border-radius:50%;background:var(--gold);border:2px solid #7a5a00;display:grid;place-items:center;font-family:var(--west);font-size:18px}
+.steps b{color:var(--blue)}
+/* CA */
+.cabox{background:#fff;border:3px double #000;padding:12px;font-family:monospace;font-size:16px;word-break:break-all;margin:8px 0}
+.btn95{background:#ece9d8;border:2px outset #fff;padding:4px 14px;font-size:12px;font-family:var(--forum)}
+.btn95:active{border-style:inset}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.links a{font-family:var(--px);font-size:12px;padding:6px 10px;border:2px outset #ddd;background:#ece9d8;color:#000;text-decoration:none}
+.links a:hover{background:var(--gold)}
+/* quick reply */
+.qr{margin:0 10px 10px;border:1px solid #98aab1}
+.qr form{padding:10px;background:var(--row1);display:grid;gap:6px}
+.qr textarea{font:13px var(--forum);height:70px;padding:6px;resize:vertical}
+.qrmsg{font-weight:700;color:#c00;min-height:1.4em}
+.foot{text-align:center;padding:14px 18px 22px;font-size:11px;color:#444;border-top:1px solid #98aab1;background:linear-gradient(#fff,#e2ecf3)}
+.badges{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+.bdg{width:88px;height:31px;border:1px solid #000;font-family:var(--px);font-size:8px;display:grid;place-items:center;text-align:center;line-height:1.1;padding:2px}
+/* popups */
+.pm{position:fixed;z-index:60;right:14px;bottom:14px;width:290px;background:#ece9d8;border:1px solid #0831d9;box-shadow:4px 4px 0 rgba(0,0,0,.3);display:none;font-size:12px}
+.pm.on{display:block;animation:pop .3s}
+@keyframes pop{0%{transform:scale(.6)}70%{transform:scale(1.05)}}
+.pmt{background:linear-gradient(#0a5fd8,#0839a8);color:#fff;font-weight:700;padding:4px 6px;display:flex;justify-content:space-between;align-items:center}
+.pmt button{background:#d8491f;color:#fff;border:1px solid #fff;border-radius:3px;width:20px;height:18px;font-size:11px;line-height:1;padding:0}
+.pmb{padding:12px}
+#lb{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.75);display:none;place-items:center;padding:16px}
+#lb.on{display:grid}
+#lb .pm{position:static;display:block;width:min(520px,94vw)}
+#lb img{max-height:68vh;margin:0 auto;background:#fff}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.rv.vis{opacity:1;transform:none}
+@media (max-width:760px){
+ .post{grid-template-columns:1fr}
+ .u{border-right:0;border-bottom:1px solid #98aab1;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+ .av{width:48px;height:48px;font-size:22px;margin:0}
+ .heroimg,.rig,.casino{grid-template-columns:1fr}
+ .atts{grid-template-columns:repeat(2,1fr)}
+ .nav{margin-left:0}
+ #forum{margin:8px 4px 20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+</style>
+</head>
+<body>
+
+<div id="rain" aria-hidden="true"></div>
+
+<div id="forum">
+ <header class="top">
+  <div class="logo">ButtTalk.org<small>Est. 2013 &middot; The internet's leading forum for coins of questionable quality</small></div>
+  <nav class="nav"><a href="#op">FAQ</a><a href="#whitepaper">Whitepaper</a><a href="#mine">Mining</a><a href="#casino">Casino</a><a href="#pics">Attachments</a><a href="#buy">How 2 Buy</a><a href="#ca">Links</a></nav>
+ </header>
+ <div class="mq" aria-hidden="true"><span>*** WELCOME GUEST! PLEASE LOGIN OR REGISTER *** NEW: $BUTTCOIN [ANN] THREAD IS LIVE *** PROOF-OF-BUTT NETWORK HASHRATE: VERY HIGH *** MODS ARE ASLEEP POST BUTTS *** IN BUTT WE TRUST ***</span></div>
+ <div class="crumb"><span><a href="#op">ButtTalk.org Forum</a> &raquo; <a href="#op">Alternate Cryptocurrencies</a> &raquo; <a href="#op">Announcements (Altcoins)</a> &raquo; [ANN] BUTTCOIN</span><span class="pages">Pages: <b>1</b><a href="#ca">2</a><a href="#ca">3</a> ... <a href="#ca">420</a></span></div>
+
+ <main class="thread">
+  <div class="th"><span>Topic: [ANN][BUTTCOIN] BUTTCOIN | In Butt We Trust | Proof-of-Butt | Fair Launch | NO PREMINE (we checked twice)</span><span>(Read 1,000,000,000 times)</span></div>
+
+  <!-- OP / HERO -->
+  <article class="post" id="op">
+   <div class="u"><div class="nm">satoshi_nakabutto</div><div class="rk">Legendary</div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="av"><img src="favicon.png" alt="" width="96" height="96"></div><div>Activity: 2013<br>Merit: 0<br>Trust: ???</div></div>
+   <div class="b">
+    <div class="ph"><b>[ANN][BUTTCOIN] BUTTCOIN | In Butt We Trust</b><span>Today at 04:20:00 AM <a class="q" href="#quick">Quote</a></span></div>
+    <div class="body ann">
+     <div class="tk">$BUTTCOIN &middot; SOLANA &middot; PROOF-OF-BUTT</div>
+     <h1>BUTTCOIN</h1>
+     <div class="tl">~ In Butt We Trust ~</div>
+     <div class="heroimg">
+      <div class="coinspin" data-speed="-0.06"><img src="logo.png" alt="Hand-drawn gold coin reading BUTT COIN, In Butt We Trust" width="1000" height="1000"></div>
+      <ul class="bbl">
+       <li>Fair launch on pump.fun</li>
+       <li>1,000,000,000 supply</li>
+       <li>Proof-of-Butt consensus</li>
+       <li>Drawn in MS Paint (pen tool)</li>
+       <li class="no">Roadmap</li>
+       <li class="no">Utility</li>
+       <li class="no">Dignity</li>
+      </ul>
+     </div>
+     <a class="buy" href="#buy">&gt;&gt; BUY $BUTTCOIN &lt;&lt;</a>
+     <p><span class="blink" style="color:#c00;font-weight:700">NEW!!!</span> <span class="rainbow">The coin crypto skeptics have been calling everything for a decade is finally real.</span></p>
+     <!-- only keep these claims if true at launch -->
+     <table class="ugly">
+      <tr><th colspan="2">COIN SPECS</th></tr>
+      <tr><td>Name</td><td>BUTTCOIN</td></tr>
+      <tr><td>Ticker</td><td>$BUTTCOIN</td></tr>
+      <tr><td>Chain</td><td>Solana</td></tr>
+      <tr><td>Total supply</td><td>1,000,000,000</td></tr>
+      <tr><td>Launch</td><td>Fair launch on pump.fun</td></tr>
+      <tr><td>Algorithm</td><td>Proof-of-Butt (it's a joke)</td></tr>
+      <tr><td>Block time</td><td>Whenever, honestly</td></tr>
+     </table>
+    </div>
+    <div class="sig">&#9608;&#9608; BUTTCOIN &#9608;&#9608;  |  IN BUTT WE TRUST  |  NO PREMINE  |  NO ICO  |  NO CLUE  |  &#9608;&#9608;</div>
+   </div>
+  </article>
+
+  <!-- WHITEPAPER / LORE -->
+  <article class="post" id="whitepaper">
+   <div class="u"><div class="nm">satoshi_nakabutto</div><div class="rk">Legendary</div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="av" style="background:var(--gold)">&#8383;</div><div>Activity: 2013<br>Merit: 0</div></div>
+   <div class="b">
+    <div class="ph"><b>Re: [ANN][BUTTCOIN] -- WHITEPAPER v0.0.1 (written on a napkin)</b><span>Today at 04:21:13 AM</span></div>
+    <div class="body rv">
+     <p><b style="font-size:16px">1. Abstract.</b> For over a decade, "Buttcoin" has been crypto's favourite insult. Skeptics used it for anything they thought was nonsense, built a whole subreddit around laughing at the industry, and passed around a browser extension that swapped the word "cloud" for "butt" on every web page you visited. The joke was everywhere. Nobody ever made it the actual coin. Until a guy with MS Paint and no adult supervision decided to.</p>
+     <p><b style="font-size:16px">2. The Coin.</b> Somewhere on the Internet, an unknown artist sketched a gold coin wedged where gold coins should not be, and wrote "BUTT COIN ... IN BUTT WE TRUST" on it in shaky pen. Nobody knows who drew it. It has the energy of a 2013 forum signature and the production value of a napkin. It is perfect.</p>
+     <p><b style="font-size:16px">3. Consensus.</b> $BUTTCOIN uses Proof-of-Butt: validators sit on the problem until it goes away. Byzantine fault tolerance is achieved by everyone agreeing that this is very stupid. (Actual consensus is handled by Solana. Proof-of-Butt is a bit.)</p>
+     <p><b style="font-size:16px">4. Why.</b> Every cycle has coins that pretend to be serious. $BUTTCOIN does not pretend. It is the self-aware one: the joke the skeptics made, wearing it like a badge. If you can't beat the butt, become the butt.</p>
+     <p><b style="font-size:16px">5. Conclusion.</b> In Butt We Trust. Thank you for coming to my TED talk. Please do not cite this whitepaper.</p>
+    </div>
+    <div class="sig">"satoshi_nakabutto is not satoshi. please stop emailing."</div>
+   </div>
+  </article>
+
+  <!-- SKEPTIC -->
+  <article class="post">
+   <div class="u"><div class="nm">cloud2butt_enjoyer</div><div class="rk">Sr. Member</div><div class="stars">&#9733;&#9733;&#9733;&#9733;</div><div class="av" style="background:#bde">&#9729;</div><div>Activity: 812<br>Merit: 3</div></div>
+   <div class="b">
+    <div class="ph"><b>Re: [ANN][BUTTCOIN]</b><span>Today at 04:25:51 AM</span></div>
+    <div class="body rv"><p>this is literally just a drawing of a butt with a coin in it</p><p><b>EDIT:</b> ok i bought some</p></div>
+    <div class="sig">I store all my data in the butt. -- my browser</div>
+   </div>
+  </article>
+
+  <!-- MINING -->
+  <article class="post" id="mine">
+   <div class="u"><div class="nm">GPU_Gary</div><div class="rk">Hero Member</div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="av" style="background:#333;color:#3f3">&#9881;</div><div>Activity: 1337<br>Rigs: 6 (on fire)</div></div>
+   <div class="b">
+    <div class="ph"><b>Re: [ANN][BUTTCOIN] -- PROOF-OF-BUTT MINING GUIDE (scroll to mine)</b><span>Today at 04:33:07 AM</span></div>
+    <div class="body rv">
+     <p>Got buttminer 0.9.2 working on my rig. Scroll the page to increase hashrate. Results not typical. Results not real.</p>
+     <div class="rig">
+      <div class="rigart">
+       <div style="color:#ff0">GARY'S RIG v3 (do not touch)</div>
+       <div class="fans"><div class="fan"></div><div class="fan"></div><div class="fan"></div><div class="fan"></div><div class="fan"></div><div class="fan"></div></div>
+       <div class="hr" id="hash">0.00 BH/s</div>
+       <div class="cheek" id="temp">TEMP: cheeky (42&deg;C)</div>
+      </div>
+      <div class="term" id="term" aria-live="off"></div>
+     </div>
+    </div>
+    <div class="sig">6x GPU | 1x space heater | 0x electricity bill paid</div>
+   </div>
+  </article>
+
+  <!-- CASINO -->
+  <article class="post" id="casino">
+   <div class="u"><div class="nm">RouletteRandy</div><div class="rk">Full Member</div><div class="stars">&#9733;&#9733;&#9733;</div><div class="av" style="background:#060;color:#fc0">$</div><div>Activity: 77<br>Bankroll: lol</div></div>
+   <div class="b">
+    <div class="ph"><b>Re: [ANN][BUTTCOIN] -- welcome to the SHITCOIN CASINO</b><span>Today at 04:44:44 AM</span></div>
+    <div class="body rv">
+     <div class="casino">
+      <div>
+       <div class="wheelbox"><div class="wheel" id="wheel"></div><div class="ball"></div></div>
+       <div class="res" id="res">scroll to spin</div>
+      </div>
+      <div>
+       <img src="meme_02.jpg" alt="Cartoon roulette wheel with the words SHITCOIN CASINO" width="384" height="384" style="border:3px ridge #888;margin:0 auto">
+       <p style="margin-top:10px">Every altcoin is roulette. At least this one is honest about it. The wheel lands on <b>BUTT</b> every time, because the wheel is also a butt.</p>
+      </div>
+     </div>
+    </div>
+    <div class="sig">red or black? i pick butt.</div>
+   </div>
+  </article>
+
+  <!-- GALLERY -->
+  <article class="post" id="pics">
+   <div class="u"><div class="nm">MSPaint_Picasso</div><div class="rk">Member</div><div class="stars">&#9733;&#9733;</div><div class="av" style="background:#fff;color:#c0c">&#9998;</div><div>Activity: 64<br>Tools: pen, bucket</div></div>
+   <div class="b">
+    <div class="ph"><b>Re: [ANN][BUTTCOIN] -- fan art dump (click to enlarge)</b><span>Today at 05:02:19 AM</span></div>
+    <div class="body rv">
+     <p>made some edits. mods please do not ban. it's art.</p>
+     <div class="att"><div class="h">&#128206; Attachments (8): click thumbnail to view full size</div><div class="atts" id="atts"></div></div>
+    </div>
+    <div class="sig">my art is in the butt now. as are we all.</div>
+   </div>
+  </article>
+
+  <!-- HOW TO BUY -->
+  <article class="post" id="buy">
+   <div class="u"><div class="nm">satoshi_nakabutto</div><div class="rk">Legendary</div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="av" style="background:var(--gold)">&#8383;</div><div>Activity: 2013<br>Merit: 0</div></div>
+   <div class="b">
+    <div class="ph"><b>Re: [ANN][BUTTCOIN] -- HOW 2 BUY (4 NOOBS)</b><span>Today at 05:10:00 AM</span></div>
+    <div class="body rv">
+     <ol class="steps">
+      <li><b>Get Phantom.</b> Install the Phantom wallet app or browser extension. Write down your seed phrase and keep it somewhere safe (not in the butt).</li>
+      <li><b>Get SOL.</b> Buy SOL on an exchange and send it to your Phantom wallet. Leave a little extra for fees.</li>
+      <li><b>Go to pump.fun.</b> Open pump.fun and connect your Phantom wallet.</li>
+      <li><b>Paste the CA.</b> Copy the official contract address from the post below and paste it into the search. Beware of fake threads and scam PMs.</li>
+      <li><b>Buy $BUTTCOIN.</b> Pick an amount, confirm, and welcome to the butt.</li>
+     </ol>
+    </div>
+   </div>
+  </article>
+
+  <!-- CA + LINKS -->
+  <article class="post" id="ca">
+   <div class="u"><div class="nm">satoshi_nakabutto</div><div class="rk">Legendary</div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="av" style="background:var(--gold)">&#8383;</div><div>Activity: 2013<br>Merit: 0</div></div>
+   <div class="b">
+    <div class="ph"><b>Re: [ANN][BUTTCOIN] -- OFFICIAL CA + LINKS (bookmark this)</b><span>Today at 05:15:00 AM</span></div>
+    <div class="body rv">
+     <p><b style="color:#c00">[ WARNING ]</b> Only use the contract address in this post. Anyone DMing you a "better" one is a butt.</p>
+     <div class="cabox" id="caText">Contract address revealed at launch</div>
+     <button class="btn95" id="copy">Copy CA</button> <span id="copied" style="font-weight:700"></span>
+     <div class="links"><a href="#">X / TWITTER</a><a href="#">PUMP.FUN</a><a href="#">DEXSCREENER</a></div>
+    </div>
+    <div class="sig">IN BUTT WE TRUST. VERIFY EVERYTHING ELSE.</div>
+   </div>
+  </article>
+ </main>
+
+ <section class="qr" id="quick">
+  <div class="th"><span>Quick Reply</span><span>Guests may post (allegedly)</span></div>
+  <form id="qf"><textarea id="qt" aria-label="Your reply" placeholder="Write your reply here... (e.g. 'wen moon', 'scam', 'bought')"></textarea><div><button class="btn95">Post reply</button> <span class="qrmsg" id="qm"></span></div></form>
+ </section>
+
+ <footer class="foot">
+  <div class="badges">
+   <div class="bdg" style="background:#00f;color:#fff">BEST VIEWED IN IE6</div>
+   <div class="bdg" style="background:var(--gold)">POWERED BY phpBUTT</div>
+   <div class="bdg" style="background:#000;color:#3f3">VALID HTML (NO)</div>
+   <div class="bdg" style="background:#f9c">MADE IN MS PAINT</div>
+  </div>
+  <p><b>$BUTTCOIN is a meme coin with no intrinsic value and no expectation of financial return.</b> It is for entertainment only. Nothing here is financial advice. Crypto is risky; never put in more than you can afford to lose.</p>
+  <p>"ButtTalk.org" is a parody forum that exists only on this page. Not affiliated with r/Buttcoin, Reddit, Bitcointalk, phpBB, the "Cloud to Butt" extension, or any other token using the BUTT name. Artwork is of unknown origin.</p>
+ </footer>
+</div>
+
+<!-- PM popup -->
+<div class="pm" id="pm" role="status"><div class="pmt"><span>ButtTalk.org - Private Message</span><button id="pmx" aria-label="Close">X</button></div><div class="pmb"><b>You have 1 new private message!</b><br>From: <i>totally_legit_admin</i><br>"hey i can get you a better CA, just send seed phrase"<br><br><b style="color:#c00">That is a scam. Always is.</b> <a href="#ca">See the real links.</a></div></div>
+<!-- lightbox -->
+<div id="lb" role="dialog" aria-modal="true" aria-label="Attachment viewer"><div class="pm"><div class="pmt"><span id="lbt">attachment.jpg</span><button id="lbx" aria-label="Close">X</button></div><div class="pmb"><img id="lbimg" src="meme_01.jpg" alt=""><p id="lbc" style="margin:8px 0 0"></p></div></div></div>
+
+<script>
+const CA = "";
+(function(){
+ var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var $ = function(s){ return document.querySelector(s); };
+
+ /* ---- raining coins: 3 depth layers, scroll moves each at its own speed ---- */
+ var rain = $('#rain'), coins = [];
+ [[0.15, 10, 22, 30], [0.4, 9, 38, 55], [0.8, 6, 62, 90]].forEach(function(cfg){
+  for (var i = 0; i < cfg[1]; i++){
+   var c = document.createElement('div'); c.className = 'cn';
+   var s = cfg[2] + Math.random()*10;
+   c.style.width = c.style.height = s + 'px'; c.style.fontSize = (s*.55) + 'px';
+   c.style.left = (Math.random()*96) + '%';
+   c.style.opacity = (.35 + cfg[0]*.6).toFixed(2);
+   c.style.animationDelay = (-Math.random()*1.6) + 's';
+   c.textContent = 'B';
+   rain.appendChild(c);
+   coins.push({el:c, base:Math.random(), fall:cfg[3]*(.8 + Math.random()*.4), par:cfg[0], size:s});
+  }
+ });
+ function rainFrame(t){
+  var vh = innerHeight, span = vh + 160, y = scrollY;
+  for (var i = 0; i < coins.length; i++){
+   var k = coins[i];
+   var pos = (k.base*span + (RM ? 0 : t/1000*k.fall) - y*k.par) % span;
+   if (pos < 0) pos += span;
+   k.el.style.transform = 'translate3d(0,' + (pos - 80).toFixed(1) + 'px,0)';
+  }
+  if (!RM) requestAnimationFrame(rainFrame);
+ }
+ requestAnimationFrame(rainFrame);
+ if (RM) addEventListener('scroll', function(){ rainFrame(0); }, {passive:true});
+
+ /* ---- scroll-driven stuff ---- */
+ var flow = [].slice.call(document.querySelectorAll('[data-speed]'));
+ var wheel = $('#wheel'), res = $('#res'), fans = document.querySelectorAll('.fan'), hash = $('#hash'), temp = $('#temp');
+ var lastY = scrollY, speed = 0, ticking = false, pmShown = false;
+ var outcomes = ['BUTT','BUTT','still BUTT','BUTT (red)','BUTT (black)','0 (also butt)'];
+ function frame(){
+  ticking = false;
+  var y = scrollY, vh = innerHeight;
+  flow.forEach(function(el){
+   var r = el.parentElement.getBoundingClientRect();
+   el.style.transform = 'translate3d(0,' + ((r.top + r.height/2 - vh/2)*parseFloat(el.dataset.speed)).toFixed(1) + 'px,0)';
+  });
+  wheel.style.transform = 'rotate(' + (y*0.6).toFixed(1) + 'deg)';
+  res.textContent = 'RESULT: ' + outcomes[Math.floor(y/180) % outcomes.length];
+  speed = Math.min(60, speed + Math.abs(y - lastY)*0.05);
+  lastY = y;
+  fans.forEach(function(f, i){ f.style.transform = 'rotate(' + (y*(2 + i*.3)).toFixed(0) + 'deg)'; });
+  if (!pmShown && y > document.documentElement.scrollHeight*0.45){ pmShown = true; $('#pm').classList.add('on'); }
+ }
+ function onScroll(){ if (!ticking){ ticking = true; requestAnimationFrame(frame); } }
+ addEventListener('scroll', onScroll, {passive:true});
+ addEventListener('resize', onScroll);
+ frame();
+ $('#pmx').addEventListener('click', function(){ $('#pm').classList.remove('on'); });
+
+ /* ---- miner terminal ---- */
+ var term = $('#term'), shares = 0, rejected = 0;
+ function tl(cls, txt){
+  var d = document.createElement('div'); d.className = cls; d.textContent = txt; term.appendChild(d);
+  while (term.children.length > 13) term.removeChild(term.firstChild);
+ }
+ tl('hd', 'buttminer 0.9.2 - Proof-of-Butt edition');
+ tl('hd', '[init] 6 GPUs detected. 1 is a toaster.');
+ tl('', '[pool] connected to stratum+tcp://in.butt.we.trust:4200');
+ function mine(){
+  speed = Math.max(0, speed*0.92);
+  var bh = (0.42 + speed*1.7).toFixed(2);
+  hash.textContent = bh + ' BH/s';
+  temp.innerHTML = 'TEMP: ' + (speed > 30 ? 'THICC (' + Math.round(60 + speed) + '&deg;C)' : speed > 10 ? 'toasty (' + Math.round(45 + speed) + '&deg;C)' : 'cheeky (42&deg;C)');
+  if (Math.random() < .12 + speed/80){
+   if (Math.random() < .85){ shares++; tl('acc', '[' + new Date().toTimeString().slice(0, 8) + '] accepted: ' + shares + '/' + (shares + rejected) + ' (' + bh + ' BH/s) yay!!!'); }
+   else { rejected++; tl('rej', '[' + new Date().toTimeString().slice(0, 8) + '] rejected: share too cheeky'); }
+  }
+ }
+ if (RM){ tl('acc', '[static] accepted: 1/1 (0.42 BH/s) yay!!!'); hash.textContent = '0.42 BH/s'; }
+ else setInterval(mine, 400);
+
+ /* ---- reveal ---- */
+ var rv = document.querySelectorAll('.rv');
+ if ('IntersectionObserver' in window && !RM){
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } }); }, {threshold:.1});
+  rv.forEach(function(e){ io.observe(e); });
+ } else rv.forEach(function(e){ e.classList.add('vis'); });
+
+ /* ---- attachments ---- */
+ var pics = [
+  ['meme_01.jpg','buttcoin_original.jpg','The sacred text. Artist unknown. In Butt We Trust.'],
+  ['meme_02.jpg','shitcoin_casino.jpg','The casino. The house always wins. The house is a butt.'],
+  ['remix_01.jpg','buttcoin_hd_remaster.jpg','HD remaster. Twice the gold, none of the dignity.'],
+  ['remix_02.jpg','buttcoin_56k.jpg','How it looked on dial-up in 2013.'],
+  ['remix_03.jpg','mirror_mode.jpg','Mirror mode. The coin fell out. Bearish.'],
+  ['remix_04.jpg','orange_edition.jpg','Orange edition. Trace-the-outline speedrun.'],
+  ['remix_05.jpg','official_buttcoin.jpg','The official $BUTTCOIN banner, captioned for clarity.'],
+  ['remix_06.jpg','casino_deepfried.jpg','The casino after a 100x. Everything is red. Everything is fine.']
+ ];
+ var atts = $('#atts');
+ atts.innerHTML = pics.map(function(p, i){
+  return '<button class="at' + (i === 4 ? ' tiny' : '') + '" data-i="' + i + '"><img src="' + p[0] + '" alt="" loading="lazy">' + p[1] + '<br>(' + (12 + i*7) + ' KB, viewed ' + (69*(i + 1)) + ' times)</button>';
+ }).join('');
+ var lb = $('#lb');
+ atts.addEventListener('click', function(e){
+  var b = e.target.closest('.at'); if (!b) return;
+  var p = pics[+b.dataset.i];
+  $('#lbimg').src = '' + p[0]; $('#lbimg').alt = p[2]; $('#lbt').textContent = p[1]; $('#lbc').textContent = p[2];
+  lb.classList.add('on');
+ });
+ $('#lbx').addEventListener('click', function(){ lb.classList.remove('on'); });
+ lb.addEventListener('click', function(e){ if (e.target === lb) lb.classList.remove('on'); });
+ document.addEventListener('keydown', function(e){ if (e.key === 'Escape'){ lb.classList.remove('on'); $('#pm').classList.remove('on'); } });
+
+ /* ---- quick reply ---- */
+ var replies = ['Your post has been held for moderation by a butt.','Error: post too bullish. Please add more FUD.','Posted! (not really, this forum is a joke)','Flood control: you must wait 420 seconds between posts.'];
+ var ri = 0;
+ $('#qf').addEventListener('submit', function(e){ e.preventDefault(); $('#qm').textContent = replies[ri++ % replies.length]; $('#qt').value = ''; });
+
+ /* ---- CA ---- */
+ if (CA) $('#caText').textContent = CA;
+ $('#copy').addEventListener('click', function(){
+  var o = $('#copied');
+  if (!CA){ o.textContent = 'Not yet. Revealed at launch.'; return; }
+  if (navigator.clipboard) navigator.clipboard.writeText(CA).then(function(){ o.textContent = 'Copied! In Butt We Trust.'; }, function(){ o.textContent = 'Copy failed. Select it manually.'; });
+ });
+})();
+</script>
+</body>
+</html>
